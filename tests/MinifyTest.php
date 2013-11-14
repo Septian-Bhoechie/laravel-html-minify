@@ -5,8 +5,14 @@ use Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyCompiler;
 
 class MinifyTest extends PHPUnit_Framework_TestCase {
 
+	private $config;
+
 	public function __construct() {
-		$this->compiler = new LaravelHtmlMinifyCompiler(m::mock('Illuminate\Filesystem\Filesystem'), __DIR__);
+		$this->config = array(
+			'enabled' => true,
+		);
+
+		$this->compiler = new LaravelHtmlMinifyCompiler(array('enabled' => $this->config), m::mock('Illuminate\Filesystem\Filesystem'), __DIR__);
 	}
 
 	/* *** */
