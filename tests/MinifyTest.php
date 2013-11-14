@@ -12,7 +12,7 @@ class MinifyTest extends PHPUnit_Framework_TestCase {
 			'enabled' => true,
 		);
 
-		$this->compiler = new LaravelHtmlMinifyCompiler(array('enabled' => $this->config), m::mock('Illuminate\Filesystem\Filesystem'), __DIR__);
+		$this->compiler = new LaravelHtmlMinifyCompiler($this->config, m::mock('Illuminate\Filesystem\Filesystem'), __DIR__);
 	}
 
 	/* *** */
